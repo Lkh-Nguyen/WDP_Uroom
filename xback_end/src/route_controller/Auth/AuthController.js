@@ -127,25 +127,26 @@ exports.updateCustomerProfile = async (req, res) => {
     res.status(500).json({ MsgNo: "Internal server error" });
   }
 };
+// function to change password
 exports.changePassword = async (req, res) => {
   try {
     const userId = req.user._id;
-    const { currentPassword, newPassword, confirmPassword } = req.body;
+    const { currentPassword, newPassword, confirmPassword } = req.body; // lấy thông tin từ body
     const user = await User.findById(userId).select("+password");
 
     if (!user) {
       return res.status(404).json({ MsgNo: "User not found" });
     }
-
+// Kiểm tra xem người dùng có phải là CUSTOMER không
     const isMatch = await bcrypt.compare(currentPassword, user.password);
     if (!isMatch) {
       return res.status(400).json({ MsgNo: "Current password is incorrect" });
     }
-
+// Kiểm tra xem mật khẩu mới match ko
     if (newPassword !== confirmPassword) {
       return res.status(400).json({ MsgNo: "Confirm password does not match" });
     }
-
+//luu mật khẩu mới
     user.password = newPassword;
     user.updatedAt = new Date();
     await user.save();

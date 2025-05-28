@@ -15,7 +15,7 @@ import { useDispatch } from "react-redux";
 import AuthActions from "../../../../redux/auth/actions";
 const ChangePassword = () => {
   const dispatch = useDispatch();
-
+//show password toggle password visibility
   const [showPassword, setShowPassword] = useState(false);
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -33,9 +33,10 @@ const ChangePassword = () => {
       [name]: value,
     });
   };
+  //show modal
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [showAcceptModal, setShowAcceptModal] = useState(false);
-
+// handle cancel and save
   const handleCancel = () => {
     const { oldPassword, newPassword, againNewPassword } = formData;
     if (!oldPassword || !newPassword || !againNewPassword) {
@@ -49,7 +50,7 @@ const ChangePassword = () => {
 
   const handleSave = () => {
     const { oldPassword, newPassword, againNewPassword } = formData;
-
+//show toast 
     if (!oldPassword || !newPassword || !againNewPassword) {
       showToast.warning("Please fill in all fields.");
       return;
