@@ -11,11 +11,9 @@ import ForgetPasswordPage from "./pages/customer/login_register/ForgetPasswordPa
 import VerifyCodePage from "./pages/customer/login_register/VerifyCodePage";
 import ResetPasswordPage from "./pages/customer/login_register/ResetPasswordPage";
 import VerifyCodeRegisterPage from "./pages/customer/login_register/VerifyCodeRegisterPage";
-
 import MyAccountPage from "./pages/customer/information/MyAccountPage";
 import BookingBill from "./pages/customer/information/BookingBill";
 import CreateFeedback from "./pages/customer/information/CreateFeedback";
-
 import Home from "./pages/customer/home/HomePage.jsx";
 import Home_detail from "./pages/customer/home/HomeDetailPage";
 import HotelSearchPage from "./pages/customer/home/HotelSearchPage";
@@ -26,7 +24,6 @@ import PaymentSuccessPage from "./pages/customer/home/PaymentSuccessPage";
 import PaymentFailedPage from "./pages/customer/home/PaymentFailedPage";
 import ReportedFeedback from "./pages/customer/home/ReportedFeedback";
 import ChatPage from "./pages/customer/home/ChatPage";
-
 import { useEffect } from "react";
 import ChatBox from "@pages/ChatMessage";
 import { useAppSelector } from "@redux/store";

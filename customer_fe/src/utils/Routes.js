@@ -1,7 +1,6 @@
 //Tác nhân Customer & Guest
 const LoginPage= '/login';
 const RegisterPage= '/regiser';
-
 const ForgetPasswordPage= '/forget_password';
 const VerifyCodePage= '/verify_code';
 const ResetPasswordPage= '/reset_password';
